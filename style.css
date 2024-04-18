@@ -1,0 +1,553 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins";
+    /* font-family: 'Poppins'; */
+    /* pour la meme taille des dive avec le mm width et hright meme si on ajoute padding ou border */
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    /* anlever  les points . de la liste */
+    list-style-type: none;
+    font-size: 62.5%;
+
+}
+:root {
+    --bg--color: #1f242d;
+    --second-bg-color: #323946;
+    --text-color: #fff;
+    --main-color: #0ef;
+}
+body {
+    background-color: var(--bg--color);
+    color: var(--text-color)
+}
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px 9%;
+    background: var(--bg--color);
+    display: flex;
+    justify-content: space-between;
+    /* centrer verticalement */
+    align-items: center;
+    z-index: 1;
+}
+.logo {
+    cursor: default;
+}
+#nav-menu {
+    display: flex;
+}
+.navbar a {
+    font-size: 18px;
+    color: var(--text-color);
+    margin-left: 36px;
+    transition: .3s;
+
+}
+.navbar a:hover,
+.navbar a.active {
+    color: var(--main-color);
+}
+#menuIcon {
+    font-size: 3.6rem;
+    color: var(--text-color);
+    display: none;
+}
+section {
+    min-height: 100vh;
+    padding: 10rem 9% 2rem;
+}
+.acceuil {
+    display: flex;
+    /* centrer horizntal */
+    justify-content: center;
+    /* centrer vertical */
+    align-items: center;
+}
+.acceuil-content h3 {
+    font-size: 30px;
+    font-weight: 700;
+}
+.acceuil-img img {
+    animation: floatimage 4s ease-in-out infinite;
+}
+@keyframes floatimage {
+    0%{
+        transform: translateY(20px);  
+      }
+      50%{
+          transform: translateY(-2,4rem);  
+        }
+        100%{
+          transform: translateY(0);  
+        }
+}
+.acceuil-content h1{
+     font-size:50px ;
+     font-weight: 600;
+     /* pour laisser les espace entre top et bottom de h1  */
+     line-height: 1.4;
+ }
+.acceuil-content p{
+    margin-top: 9px;
+    font-size:1.6rem ;
+}
+span{
+    color: var(--main-color);
+}
+
+/* gap est utilisée pour spécifier l'espace entre
+ les éléments enfants d'un conteneur. Cette propriété 
+ est couramment associée aux conteneurs de disposition flexbox 
+ et grille (flexbox et grid). */
+ .profil{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* L'espace de 2rem entre les éléments enfants */
+    gap: 2rem;
+    background-color: var(--second-bg-color);
+}
+.heading{
+    text-align: center;
+    font-size: 4.5rem;
+    margin-bottom: 77px;
+}
+
+.profil-content h3{
+    /* font-size: 2.6rem; */
+    background-image: linear-gradient( rgb(3, 233, 249),rgb(255, 255, 255));
+    -webkit-background-clip: text;
+    color: transparent;
+    font-size: 30px;
+    text-shadow: none ;
+
+}
+.profil-content p{
+    font-size: 1.6rem;
+    margin: 2rem 0 5rem;
+    word-spacing: 2px;
+}
+.profil-img img{
+    width: 200px;
+    height: 200px;
+    border: 3px solid #0ef;
+    border-radius: 50%;
+    padding: 20px;
+}
+.social-media a{
+    display:inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    background: transparent;
+    border: 2px solid var(--main-color);
+    border-radius:50%;
+    font-size: 2rem;
+    color: var(--main-color);
+    margin: 17px 1.5rem  3rem 0;
+    transition:  .5s ease;
+    cursor: default;
+}
+.social-media a:hover{
+    background: var(--main-color);
+    color:var(--second-bg-color) ;
+    box-shadow: 0 0 1rem var(--main-color);
+}
+.social-media span{
+    margin-right: 10px;
+    font-size: 16px;
+    color: #fff;
+
+}
+
+.services h2{
+    margin-bottom:5rem ;
+}
+.formations-container{
+    display: flex ;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; 
+    gap:4rem;
+    
+}
+.formations-container .formations-box{
+    flex: 1 1 30rem;
+    background-color: var(--second-bg-color);
+    padding: 2rem 2rem 4rem;
+    border-radius:4rem ;
+    text-align: center;
+    border: .2rem solid var(--bg--color);
+    transition: .10s ease ;   
+}
+.formations-box i{
+    font-size: 7rem;
+    color: var(--main-color);
+}
+.formations-box h3{
+    font-size: 2.6rem;
+    color: var(--main-color);
+}
+.formations-box p{
+    font-size: 1.6rem;
+    margin:1rem 0 3rem;
+    
+}
+.formations-container .formations-box:hover{
+    border-color:var(--main-color);  
+    transform: scale(1.1);
+   
+} 
+.formations-box span{
+    font-size: 2rem;
+    color: white;
+}
+.Projets{
+    background-color: var(--second-bg-color);
+}
+.projets-container{
+    display: grid;
+   /* repartir le contenu en 3 collones fr unite de fraction */
+   grid-template-columns: repeat(2,1fr);
+   align-items: center;
+   justify-content: center;
+   gap:2.5rem;
+  
+}
+
+.projets-container .projets-box{
+    border-radius:50px;
+    border: 2px solid  var(--main-color);
+    
+    overflow: hidden;
+    text-align: center;
+    width:480px ;
+    height: auto;
+    padding: 10px;
+}
+.projets-box img{
+    width: 400px;
+    height: 300px;
+    margin-bottom: 15px;
+}
+.projets-box h4,h3{
+    margin-bottom: 15px;
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+/* .projets-box a{
+    text-decoration: none;
+    cursor: pointer;
+    color: white;
+    transition: .2s ease-in-out;
+} */
+/* .projets-box a:hover{
+color: #0ef;
+transform: scale(1.1);
+} */
+.contact h2{
+    margin-bottom: 3rem;
+}
+.loisir{
+    background-color: var(--second-bg-color);
+}
+.loisirs{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    text-align: center;
+   
+}
+
+
+.loisir-item{
+    border:2px solid var(--main-color) ;
+    border-radius: 50%;
+    overflow: hidden; /* Pour masquer les coins de l'image qui dépassent */
+    padding: 20px;
+    
+
+}
+.loisir-item img{
+    width: 150px; 
+    height: 100px; 
+}
+.loisir-item p{
+    font-size: 2rem;
+    color: var(--main-color);
+}
+
+.competences{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.competence-item{
+    overflow: hidden; /* Pour masquer les coins de l'image qui dépassent */
+    padding: 20px;
+}
+.competence-item img{
+    width: 90px; 
+    height: 90px; 
+}
+.competence-item p{
+    margin-top: 10px;
+    font-size: 2rem;
+    color: var(--main-color);
+}
+
+.footer{
+  display: flex;  
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 2rem 9%;
+  
+}
+.footer-text p{
+    font-size:1.6rem;
+}
+.footer-iconTop a{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: .8rem;
+    background-color: var(--main-color);
+    border-radius: 50%;
+    transition:.5s ease ;
+
+}
+.footer-iconTop a i{
+    font-size: 2.4rem;
+    color: var(--second-bg-color);
+
+
+}
+.footer-iconTop a:hover{
+box-shadow:0 0 1rem var(--main-color) ;
+}
+@media (max-width:1200px){
+    html{
+        font-size: 55%;
+    }
+}
+@media (max-width:991px){
+    html{ 
+        font-size: 2rem 3%;
+    }
+    section{
+        padding:10rem 3% 2rem;
+    }
+    .formations{
+        padding-bottom: 7rem;
+    }
+    .Projets{
+        padding-bottom: 7rem;
+
+    }.contact{
+        min-height:auto;
+    }
+    .footer{
+        padding:2rem 3%;
+    }
+    .projets-container{
+        grid-template-columns: repeat(1,1fr);
+
+    }
+}
+
+@media (max-width:768px){
+    #menuIcon{
+        display: block;
+    }
+    .navbar{
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        padding: 1rem 3%;
+        background:var(--bg--color) ;
+        border-top:.1rem solid rgba(0,0,0,.2);
+        box-shadow:0 .5rem 1rem rgba(0,0,0,.2) ;
+        display: none;
+    }
+    .navbar.active{
+        display: block;
+    }
+    #nav-menu  {
+        display:block;
+        font-size: 2rem;
+        margin:3rem 0;
+        
+        
+    }
+    .acceuil{
+        /* repositionner les elements de acceuil en colnnes */
+        flex-direction: column;
+    }
+    .acceuil-content h3{
+        font-size: 2.6rem ;
+    }
+    .acceuil-content h1{
+        font-size: 5rem;
+    }
+    .acceuil-img img{
+        width: 70vw;
+        margin-top: 4rem;
+    }
+    .profil{
+        flex-direction:column-reverse ;
+    }
+    .profil img{
+        width:70vw;
+        margin-top: 4rem;
+
+    }
+    .formation h2{
+        margin-bottom: 3rem;
+        
+
+    }
+    .formations-container{
+        flex-direction: column;
+    }
+    .Projets h2{
+        margin-bottom: 3rem;
+    }
+    .projets-container{
+        grid-template-columns: repeat(1,1fr);
+
+    }
+    .loisirs{
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+        
+    }
+    .loisir-item{
+      width: 50%;
+      height:auto;
+      margin-bottom: 15px;
+    }
+    .competences{
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+        
+    }
+    .competence-item{
+      width: 50%;
+      height:auto;
+      margin-bottom: 15px;
+    }
+
+
+}
+@media(max-width:617px){
+    .projets-container{
+        grid-template-columns: 1fr;
+    }
+    .formations-container{
+        flex-direction: column;
+     
+    }
+    .loisirs{
+        flex-direction: column-reverse;
+        justify-content: space-around;
+        text-align: center;
+    }
+    .projets-container{
+        grid-template-columns: repeat(1,1fr);
+
+    }
+}
+
+@media(max-width:450px){
+    html{
+        font-size: 50%;
+    }
+    .contact form .input-box input{
+        width: 100%;
+    }
+    .loisirs{
+        flex-direction: column-reverse;
+        justify-content: space-around;
+        text-align: center;
+    }
+    .competences{
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+        
+    }
+    .competence-item{
+      width: 50%;
+      height:auto;
+      margin-bottom: 15px;
+    }
+    
+    .projets-container{
+        grid-template-columns: repeat(1,1fr);
+
+    }
+
+}
+
+@media(max-width:365px){
+    .acceuil-img img{
+        width:90vw;
+    }
+    .profil-img img{
+        width: 90vw;
+    }
+    .footer{
+        flex-direction: column-reverse;
+    }
+    .footer p{
+        text-align: center;
+        margin-top: 2rem;
+    }
+    .loisirs{
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+        
+    }
+    .loisir-item{
+      width: 50%;
+      height:auto;
+      margin-bottom: 15px;
+    }
+    .competences{
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+        
+    }
+    .competence-item{
+      width: 50%;
+      height:auto;
+      margin-bottom: 15px;
+    }
+    .projets-container{
+        grid-template-columns: repeat(1,1fr);
+
+    }
+    
+
+    
+
+
+}
+
+
